@@ -5,4 +5,4 @@ RUN npm install --omit=dev
 COPY . .
 CMD ["node", "index.js"]
 
-# docker run --rm --name log-output ivo123/log-output:1.1
+# docker run --rm --name todo-app ivo123/todo-app:1.1
