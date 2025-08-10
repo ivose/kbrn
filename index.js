@@ -1,12 +1,8 @@
-const http = require('http');
+const { v4: uuidv4 } = require('uuid');
 
-const PORT = process.env.PORT || 3000;
+// Generate and store the random string once
+const randomString = uuidv4();
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Todo app server\n');
-});
-
-server.listen(PORT, () => {
-  console.log(`Server started in port ${PORT}`);
-});
+setInterval(() => {
+  console.log(`${new Date().toISOString()}: ${randomString}`);
+}, 5000);
